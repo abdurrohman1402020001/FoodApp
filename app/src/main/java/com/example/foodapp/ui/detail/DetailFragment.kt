@@ -7,14 +7,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.example.foodapp.R
+import com.example.foodapp.data.local.database.entity.FoodEntity
 import com.example.foodapp.databinding.FragmentDetailBinding
+import com.example.foodapp.ui.cart.CartViewModel
 
 class DetailFragment : Fragment() {
 
     lateinit var binding: FragmentDetailBinding
-
+    lateinit var detailViewModel: CartViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -24,6 +28,7 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        detailViewModel = ViewModelProvider(this).get(CartViewModel::class.java)
         val bundle = arguments
         val ambilDataMenu = bundle!!.getString("namaMenu")
         val ambilDataharga = bundle!!.getString("hargaMenu")
@@ -54,6 +59,21 @@ class DetailFragment : Fragment() {
 //        binding.btnDecrement.setOnClickListener {
 //            viewModel.decrement()
 //        }
+        binding.btnAddCart.setOnClickListener {
+            val stock = binding.number.text.toString()
+            detailViewModel.insertData(
+                FoodEntity(
+                    0,
+                    ambilDataMenu!!,
+                    ambilDataimeage!!,
+                    (ambilDataharga!!.replace("[^0-9]".toRegex(), "").toInt()*binding.number.text.toString().toInt()).toString()
+                    ,
+                    stock.toInt()
+                )
+            )
+            findNavController().navigate(R.id.action_detailFragment_to_cartFragment)
+        }
+
         countingFood()
     }
 
