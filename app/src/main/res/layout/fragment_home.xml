@@ -123,8 +123,8 @@
 
     <GridLayout
         android:id="@+id/gridLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="380dp"
+        android:layout_height="130dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:columnCount="4"
@@ -134,128 +134,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cv_poster">
 
-        <LinearLayout
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCategory"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal"
-            tools:ignore="UselessParent">
+            android:layout_height="match_parent"/>
 
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/nasi1"
-                    android:layout_width="85dp"
-                    android:layout_height="80dp"
-                    android:contentDescription="@string/img_desc"
-                    android:src="@drawable/img_icon_nasi" />
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/teks_nasi"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp"
-                    android:textStyle="normal" />
-            </LinearLayout>
-
-
-            <View
-                android:layout_width="16dp"
-                android:layout_height="1dp" /> <!-- Sesuaikan ukuran jarak di sini -->
-
-
-            <LinearLayout
-                android:layout_width="86dp"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/nasi2"
-                    android:layout_width="70dp"
-                    android:layout_height="80dp"
-                    android:contentDescription="@string/img_desc"
-                    android:src="@drawable/img_icon_mie"
-                    tools:ignore="ImageContrastCheck" />
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/teks_mie"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp"
-                    android:textStyle="normal" />
-            </LinearLayout>
-
-
-            <View
-                android:layout_width="16dp"
-                android:layout_height="1dp" /> <!-- Sesuaikan ukuran jarak di sini -->
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/nasi3"
-                    android:layout_width="70dp"
-                    android:layout_height="80dp"
-                    android:contentDescription="@string/img_desc"
-                    android:src="@drawable/img_icon_snack"
-                    tools:ignore="ImageContrastCheck" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/teks_snack"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp"
-                    android:textStyle="normal" />
-            </LinearLayout>
-
-
-            <View
-                android:layout_width="16dp"
-                android:layout_height="1dp" /> <!-- Sesuaikan ukuran jarak di sini -->
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="vertical">
-
-                <com.google.android.material.imageview.ShapeableImageView
-                    android:id="@+id/nasi4"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:contentDescription="@string/img_desc"
-                    android:src="@drawable/img_icon_minuman" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/teks_minuman"
-                    android:textColor="@android:color/black"
-                    android:textSize="14sp"
-                    android:textStyle="normal" />
-            </LinearLayout>
-        </LinearLayout>
     </GridLayout>
 
 
