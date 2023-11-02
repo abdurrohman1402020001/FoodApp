@@ -11,8 +11,8 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.foodapp.R
 import com.example.foodapp.databinding.FragmentProfileBinding
-import com.google.firebase.Firebase
-import com.google.firebase.auth.auth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class ProfileFragment : Fragment() {
 
@@ -49,7 +49,7 @@ class ProfileFragment : Fragment() {
             }
 
             btnLogoutProfile.setOnClickListener {
-                Firebase.auth.signOut()
+            Firebase.auth.signOut()
                 findNavController().navigate(R.id.action_profileFragment_to_loginFragment)
             }
             ivBackProfile.setOnClickListener {

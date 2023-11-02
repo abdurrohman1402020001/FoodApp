@@ -23,11 +23,4 @@ class LoginViewModel : ViewModel() {
             }
         }
 
-    fun session() {
-        if (Firebase.auth.currentUser != null) {
-            _user.postValue(Firebase.auth.currentUser)
-        } else {
-            _user.postValue(null)
-        }
-    }
 }
